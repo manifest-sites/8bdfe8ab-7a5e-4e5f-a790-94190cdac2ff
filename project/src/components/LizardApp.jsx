@@ -70,13 +70,13 @@ const LizardApp = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-slate-800 p-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
-          <Title level={1} className="text-green-800 mb-2">
+          <Title level={1} className="text-white mb-2">
             🦎 Amazing Lizards 🦎
           </Title>
-          <Paragraph className="text-lg text-green-700">
+          <Paragraph className="text-lg text-gray-300">
             Discover the fascinating world of lizards and their incredible adaptations
           </Paragraph>
         </div>
@@ -86,23 +86,23 @@ const LizardApp = () => {
             <Col key={lizard.id} xs={24} sm={12} lg={6}>
               <Card
                 hoverable
-                className="h-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="h-full shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gray-800 border-gray-700"
                 cover={
-                  <div className="bg-gradient-to-r from-green-400 to-emerald-500 h-32 flex items-center justify-center">
+                  <div className="bg-gradient-to-r from-slate-600 to-gray-700 h-32 flex items-center justify-center">
                     <span className="text-6xl">{lizard.emoji}</span>
                   </div>
                 }
                 onClick={() => setSelectedLizard(lizard)}
               >
                 <Card.Meta
-                  title={<Text className="text-green-800">{lizard.name}</Text>}
+                  title={<Text className="text-white">{lizard.name}</Text>}
                   description={
                     <div>
-                      <Text italic className="text-green-600 block mb-2">
+                      <Text italic className="text-gray-400 block mb-2">
                         {lizard.scientificName}
                       </Text>
-                      <Tag color="green">Size: {lizard.size}</Tag>
-                      <Tag color="blue" className="mt-1">Lifespan: {lizard.lifespan}</Tag>
+                      <Tag color="cyan">Size: {lizard.size}</Tag>
+                      <Tag color="purple" className="mt-1">Lifespan: {lizard.lifespan}</Tag>
                     </div>
                   }
                 />
@@ -113,11 +113,11 @@ const LizardApp = () => {
 
         {selectedLizard && (
           <Card 
-            className="mt-8 shadow-xl"
+            className="mt-8 shadow-xl bg-gray-800 border-gray-700"
             title={
               <div className="flex items-center gap-3">
                 <span className="text-2xl">{selectedLizard.emoji}</span>
-                <Title level={3} className="mb-0 text-green-800">
+                <Title level={3} className="mb-0 text-white">
                   {selectedLizard.name}
                 </Title>
               </div>
@@ -126,7 +126,7 @@ const LizardApp = () => {
               <Button 
                 onClick={() => setSelectedLizard(null)}
                 type="text"
-                className="text-green-600 hover:text-green-800"
+                className="text-gray-400 hover:text-white"
               >
                 ✕ Close
               </Button>
@@ -136,19 +136,19 @@ const LizardApp = () => {
               <Col xs={24} md={12}>
                 <Space direction="vertical" size="middle" className="w-full">
                   <div>
-                    <Text strong className="text-green-800">Scientific Name:</Text>
+                    <Text strong className="text-white">Scientific Name:</Text>
                     <br />
-                    <Text italic>{selectedLizard.scientificName}</Text>
+                    <Text italic className="text-gray-300">{selectedLizard.scientificName}</Text>
                   </div>
                   <div>
-                    <Text strong className="text-green-800">Habitat:</Text>
+                    <Text strong className="text-white">Habitat:</Text>
                     <br />
-                    <Text>{selectedLizard.habitat}</Text>
+                    <Text className="text-gray-300">{selectedLizard.habitat}</Text>
                   </div>
                   <div>
-                    <Text strong className="text-green-800">Diet:</Text>
+                    <Text strong className="text-white">Diet:</Text>
                     <br />
-                    <Tag color={selectedLizard.diet === 'Herbivore' ? 'green' : selectedLizard.diet === 'Carnivore' ? 'red' : 'orange'}>
+                    <Tag color={selectedLizard.diet === 'Herbivore' ? 'cyan' : selectedLizard.diet === 'Carnivore' ? 'magenta' : 'orange'}>
                       {selectedLizard.diet}
                     </Tag>
                   </div>
@@ -156,10 +156,10 @@ const LizardApp = () => {
               </Col>
               <Col xs={24} md={12}>
                 <div>
-                  <Text strong className="text-green-800">Fun Facts:</Text>
+                  <Text strong className="text-white">Fun Facts:</Text>
                   <ul className="mt-2 space-y-1">
                     {selectedLizard.facts.map((fact, index) => (
-                      <li key={index} className="text-gray-700">
+                      <li key={index} className="text-gray-300">
                         • {fact}
                       </li>
                     ))}
@@ -171,11 +171,11 @@ const LizardApp = () => {
         )}
 
         <div className="text-center mt-12">
-          <Card className="bg-green-50 border-green-200">
-            <Title level={4} className="text-green-800 mb-3">
+          <Card className="bg-gray-800 border-gray-700">
+            <Title level={4} className="text-white mb-3">
               Did You Know?
             </Title>
-            <Paragraph className="text-green-700 text-lg">
+            <Paragraph className="text-gray-300 text-lg">
               There are over 6,000 species of lizards worldwide, making them one of the most diverse groups of reptiles! 
               They've been around for more than 200 million years and have adapted to almost every environment on Earth.
             </Paragraph>
